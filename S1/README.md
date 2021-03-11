@@ -113,7 +113,7 @@ codigo segment 'code'
 		int 21h
 
 		mov ax,4C00h ; termina y sale del SO. 4C indica "finalizar el programa",
-                     ; y 00, "salir a SO"
+                     	     ; y 00, "salir a SO"
 		int 21h ; La interrupción 21h es propia de las interrupciones del sistema DOS
 	main ENDP
 codigo ends
@@ -142,16 +142,16 @@ El código de CGA es bastante extenso, por lo que decidí no colocarlo aquí ent
 pixel MACRO X,Y,C
         push ax ;guardamos en pila
         push cx
-		push dx
-		mov ax,Y
-		mov cx,X ; almacenamos la posición de X en CX
-		mov dx,ax ; almacenamos la posicion de Y en DX
+	push dx
+	mov ax,Y
+	mov cx,X ; almacenamos la posición de X en CX
+	mov dx,ax ; almacenamos la posicion de Y en DX
         mov al,C ; almacenamos el color en AX
         mov ah,0Ch
         int 10h ; llamadas a BIOS/SO para pintar por pantalla
         pop dx
         pop cx
-		pop ax
+	pop ax
 ENDM
 ```
 
@@ -164,23 +164,23 @@ ENDM
 Vamos a probar a editar el Hola mundo para que haga un bucle con 7 iteraciones.
 
 ```assembly
-[...]
+;[...]
 	assume cs:codigo, ds:datos, ss:pila
 	main PROC
 		mov ax,datos
 		mov ds,ax
     
-        mov cx,0  ;CX será el registro de control. Equivale a decir que iterador = 0.
+        	mov cx,0  ;CX será el registro de control. Equivale a decir que iterador = 0.
 
-    bucle:                 ; marcamos el cuerpo del bucle para retornar
+    		bucle:                 ; marcamos el cuerpo del bucle para retornar
 		mov dx,OFFSET msg
 		mov ah,9
 		int 21h
-        add cx,1     ; incrementamos CX a 1. Equivale a iterador++   
+        	add cx,1     ; incrementamos CX a 1. Equivale a iterador++   
         
-        cmp cx,7     ; Comparamos CX a 7 para saber si seguir con el bucle. Equivale a i < 7.
-                     ; CMP funciona restando CX y 7, pero sin alterar CX, sólo los flags.
-        jnz bucle    ; Si el flag ZF está a 0, vuelve a la etiqueta bucle 
+        	cmp cx,7     ; Comparamos CX a 7 para saber si seguir con el bucle. Equivale a i < 7.
+              		       ; CMP funciona restando CX y 7, pero sin alterar CX, sólo los flags.
+       		jnz bucle    ; Si el flag ZF está a 0, vuelve a la etiqueta bucle 
 
 		mov ax,4C00h
 		int 21h
@@ -201,7 +201,7 @@ Visto que en CGA se han hecho lineas, ¿por qué no usarlas para escribir mi nom
 
 Para ello:
 - Sólo vale usar líneas diagonales, horizontales y verticales.
-- Obviaremos las tildes (porque calcular la posición exacta es prueba y error y ya hacer esto fue un poco por probar los límites)
+- Obviaremos las tildes (porque calcular la posición exacta es prueba y error y ya hacer esto fue un poco por probar)
 - El nombre será en mayúscula para evitar muchos trazos
   
 Así si descomponemos Iván ("`IVAN`" sería el resultado):
@@ -225,7 +225,7 @@ Ahora pasemos a los fragmentos para crear las líneas:
 		bucle1:
 			pixel cx,40,VERDE
 			dec cx
-         cmp cx, <LIM_X>
+         		cmp cx, <LIM_X>
 			jnz bucle1
 
 ```
@@ -237,34 +237,34 @@ Ahora pasemos a los fragmentos para crear las líneas:
 		bucle2:
 			pixel 25,cx,ROSA
 			dec cx
-            cmp cx,40
+            		cmp cx,40
 			jnz bucle2
 ```
 - **Línea diagonal izquierda** : 
 
 ```assembly
 ;pintar una linea diagonal ascendente izq
-		mov cx,80
+	mov cx,80
         mov dx,100
-		bucle3:
-			pixel dx,cx,BLANCO
-			dec cx
-            dec dx
-            cmp cx,<LIM_Y>
-			jnz bucle3
+	bucle3:
+		pixel dx,cx,BLANCO
+		dec cx
+            	dec dx
+           	cmp cx,<LIM_Y>
+		jnz bucle3
 ```
 - **Línea diagonal derecha** : 
 
 ```assembly
 ;pintar una linea diagonal ascendente der
-		mov cx,<POS_Y>
+	mov cx,<POS_Y>
         mov dx,<POS_X>
-		bucle3bis:
-			pixel dx,cx,BLANCO
-			dec cx
-            inc dx
-            cmp cx,<LIM_Y>
-			jnz bucle3bis
+	bucle3bis:
+		pixel dx,cx,BLANCO
+		dec cx
+        	inc dx
+         	cmp cx,<LIM_Y>
+		jnz bucle3bis
 ```
 
 El resultado, tras compilar (y un buen rato de ir cuadrando las líneas) es:
