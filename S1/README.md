@@ -2,16 +2,16 @@
 
 ## Índice de contenidos
 - [Seminario 1 : Programación de dispositivos a bajo nivel](#seminario-1--programación-de-dispositivos-a-bajo-nivel)
-  - [Índice de contenidos](#índice-de-contenidos)
-  - [1.1 Instalando y configurando DOSBox](#11-instalando-y-configurando-dosbox)
-  - [1.2 Preparando el compilador.](#12-preparando-el-compilador)
-  - [1.3 Hora de programar](#13-hora-de-programar)
-    - [1.3.1 Probando ejemplos](#131-probando-ejemplos)
-      - [El "Hola mundo"](#el-hola-mundo)
-      - [Mostrando gráficos en CGA](#mostrando-gráficos-en-cga)
-    - [1.3.2 Editando cosas de los programas](#132-editando-cosas-de-los-programas)
-      - [Hola mundo, pero lo repite 7 veces](#hola-mundo-pero-lo-repite-7-veces)
-      - [Intentemos escribir algo en CGA](#intentemos-escribir-algo-en-cga)
+	- [Índice de contenidos](#índice-de-contenidos)
+	- [1.1 Instalando y configurando DOSBox](#11-instalando-y-configurando-dosbox)
+	- [1.2 Preparando el compilador.](#12-preparando-el-compilador)
+	- [1.3 Hora de programar](#13-hora-de-programar)
+		- [1.3.1 Probando ejemplos](#131-probando-ejemplos)
+			- [El "Hola mundo"](#el-hola-mundo)
+			- [Mostrando gráficos en CGA](#mostrando-gráficos-en-cga)
+		- [1.3.2 Editando cosas de los programas](#132-editando-cosas-de-los-programas)
+			- [Hola mundo, pero lo repite 7 veces](#hola-mundo-pero-lo-repite-7-veces)
+			- [Intentemos escribir algo en CGA](#intentemos-escribir-algo-en-cga)
 
 ## 1.1 Instalando y configurando DOSBox
 A la hora de instalar DOSBox se daba la opción de descargarlo a través de la página, pero en su lugar me decanté, ya que uso una distribución basada en Linux (Fedora en mi caso), a probar si ya estaba en los repositorios de paquetes de DNF.
@@ -193,6 +193,8 @@ END main
 Al compilar, nos retorna:
 
 ![LoopHola](img/LoopHola.png)
+
+![LoopHolaExe](img/LoopHolaEjecucion.png)
 
 #### Intentemos escribir algo en CGA
 Visto que en CGA se han hecho lineas, ¿por qué no usarlas para escribir mi nombre, por ejemplo?
