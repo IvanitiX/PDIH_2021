@@ -1,5 +1,14 @@
 # Seminario 2. Acceso a dispositivos de E/S en C
 
+# Tabla de contenidos
+- [Seminario 2. Acceso a dispositivos de E/S en C](#seminario-2-acceso-a-dispositivos-de-es-en-c)
+- [Tabla de contenidos](#tabla-de-contenidos)
+  - [2.1 Instalando Borland C](#21-instalando-borland-c)
+  - [2.2 Probando el IDE](#22-probando-el-ide)
+  - [2.3 Probando los ejemplos](#23-probando-los-ejemplos)
+    - [Teclado. Entrada y salida : `Entrada.c`](#teclado-entrada-y-salida--entradac)
+    - [Gráficos : `Grafica.c`](#gráficos--graficac)
+
 ## 2.1 Instalando Borland C
 Como ya se vio en el [Seminario anterior](../S1/README.md#12-preparando-el-compilador), podemos ver qué es `Borland C` y cómo añadir los binarios en el `PATH`.
 
