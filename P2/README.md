@@ -10,7 +10,7 @@
   - [3. En conclusión...](#3-en-conclusión)
 
 ## 0. ¿Qué es `ncurses` y cómo lo instalo?
-
+La librería `ncurses` es  una  biblioteca  de  programación  que  provee  una  API  que  permite  al programador escribir interfaces basadas en texto, similares a los que se veían en apliaciones DOS (véase [la práctica anterior](../S2/README.md) para tener una ligera idea del resultado).
 
 Para instalarlo, en mi caso, en Fedora (podría ser aplicable a los demás SO de RedHat), se instala con :
 
