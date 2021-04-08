@@ -7,6 +7,7 @@
     - [1.2 Ventanas y subventanas](#12-ventanas-y-subventanas)
     - [1.3 Moviendo una pelotita por la pantalla](#13-moviendo-una-pelotita-por-la-pantalla)
   - [2. Ping, PONG: Recreando un juego con `ncurses`](#2-ping-pong-recreando-un-juego-con-ncurses)
+  - [3. En conclusión...](#3-en-conclusión)
 
 ## 0. ¿Qué es `ncurses` y cómo lo instalo?
 
@@ -373,6 +374,21 @@ Para reescalar, intentamos comparar los maximos X e Y con las columnas y filas y
 
 Pero hay ciertos problemillas, ya que al aumentar la resolución va todo bien, pero al reducirlo se mueve al campo contrario. Actualizaré si logro hacerlo...
 
+>**Actualizo a 8 de Abril**: Finalmente lo logré arreglar, pero el reescalado permite cambiar sólo la ventana de juego hasta que se marque un tanto, cuando se haga la actualización. En el inicio del programa, sin embargo, no se ha tenido en cuenta, y al aumentar el tamaño inicia el juego de igual forma.
 
+> El código varía ligeramente, siendo el cambio:
+> ```c
+>   x = old_x * (float)((max_x*1.0/cols)) ;
+>   y = old_y * (float)((max_y*1.0/rows));
+> ```
+> Eso sí, en consecuencia, podrían ocurrir cosas inesperadas como que se haya borrado el terreno de juego a resoluciones sin sentido. Pero creo que sería ya un caso muy extremo, y como se comentó en la sesión de esta nota, no iba a ser muy trascendental tratar este detalle, por lo que lo dejaré así.
+
+
+## 3. En conclusión...
+La biblioteca `ncurses` podría ser muy útil para sistemas que se busque una interfaz similar a la de ventana pero dentro de una interfaz de texto, como por ejemplo las Raspberry Pi más modestas (véase, por ejemplo, la RPi Zero W), que podrían usarse para mostrar pequeñas informaciones de dispositivos IoT en una pantalla sin necesidad de usar un entorno de escritorio.
+
+El hecho también de poder usarse en otros lenguajes como Python pueden hacer de esta biblioteca muy útil para ese tipo de casuísticas.
+
+En definitiva, el uso de este lenguaje permite una representación más cómoda e incluso visual de la información, a medio camino entre la interfaz pura de texto y los actuales gestores de escritorios.
 
 

@@ -88,10 +88,11 @@ int main(void) {
        if (cols != max_x || rows != max_y){
           old_x = x;
           old_y = y;
-          x = old_x * (float)((max_x/cols)*1.0) ;
-          y = old_y * (float)((max_y/rows)*1.0);
+          x = old_x * (float)((max_x*1.0/cols)) ;
+          y = old_y * (float)((max_y*1.0/rows));
 
           getmaxyx(stdscr, rows, cols);
+
           wresize(window, rows, cols);
           wresize(window2, rows-4, cols);
 
@@ -101,6 +102,7 @@ int main(void) {
             mvwprintw(window, 2,(cols/2)-3, "%d", points_p1);
             mvwprintw(window, 2,(cols/2), "|");
             mvwprintw(window, 2,(cols/2)+3, "%d", points_p2);
+            pos_p1 = pos_p2 = (rows-4)/2;
 
           box(window2, '|', '-');
           box(window, '|', '-');
