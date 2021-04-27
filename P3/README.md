@@ -9,12 +9,12 @@ En el montaje real se hizo uso, en vez de usar 10 LEDs, de un LED Bar Graph, que
 ![Resultado3](img/IMG_20210415_135143.jpg)
 
 ## 2. La pantalla LCD 16x2 y caracteres especiales
-En un principio la idea era sonar un pitido por el sensor de cercanía. Pero al no tenerlo en mi kit de Arduino (yo tengo el Freenove UNO Super Pack), pero tener una pantalla LCD 16x2, decidí hacer el montaje basándome en el Capítulo 13.A de la guía, cambiando algunas cosas.
+En un principio la idea era sonar un pitido por el sensor de cercanía. Pero al no tenerlo en mi kit de Arduino (yo tengo el [Freenove UNO Super Pack](https://github.com/Freenove/Freenove_Super_Starter_Kit)), pero sí tener una pantalla LCD 16x2, decidí hacer el montaje basándome en el Capítulo 13.A de la guía del kit, cambiando algunas cosas.
 
 Este sería el montaje en Tinkercad:
 ![Esquema4](img/PDIH_4%20LCD1602.png)
 
-Conste que si se ejecutara en simulación no funcionaría, pero si lo hiciéramos en un entorno físico, saldría lo que se ve justo en las últimas imágenes.
+Conste que si se ejecutara en simulación no funcionaría, pero si lo hiciéramos en un entorno físico, saldría lo que se ve justo en las últimas imágenes (me basé en el circuito original).
 
 Además de ello, quise añadir caracteres especiales, ya que cada celda es una pequeña matriz 5x8. Así, usando un generador [como este](https://maxpromer.github.io/LCD-Character-Creator/), se convierte la representación en binario o hexadecimal, y además se dan instrucciones para añadir ese custom char en el LCD.
 Se crearon dos custom chars, un smiley y el signo de apertura de exclamación, ya que en el texto del LCD no lo admitía.
