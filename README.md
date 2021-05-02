@@ -12,4 +12,4 @@ Repositorio de **Iván Valero Rodríguez** con las prácticas, trabajos y semina
 - [S3. Introducción con Arduino](S-arduino/README.md)
 ## Trabajo final
 En colaboración con **Laura Sánchez Sánchez**
-- [Asistentes virtuales con IBM Watson (En proceso)](#)
+- [Asistentes virtuales con IBM Watson](ProyectoFinal/README.md)
