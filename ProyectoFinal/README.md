@@ -5,7 +5,7 @@ Proyecto final de libre elección para la asignatura. Se ha realizado junto con 
 ## 0. Una idea intuitiva de los asistentes virtuales
 A la hora de pensar en los asistentes virtuales lo primero que dicen es "¿Qué es eso? ¿Eso del Siri, la Cortana?" Pero puede parecer una caja negra. Una aplicación o aparato a la que le hablas, esperas un poco y te dice algo.
 
-Podríamos, si pensamos un poco más, que las acciones que realiza son:
+Podríamos ver, si pensamos un poco más, que las acciones que realiza son:
 - Grabar un audio a través del micrófono. Eso sí, no hay que darle a ningún botón para ello, normalmente se mira el ruido ambiente y si se acerca para hablar es cuando se activa.
 - Procesar ese audio. Tendrá que ver qué quiere decir ese audio que habrá grabado.
 - Elegir la respuesta. A través de palabras clave, se usará el procedimiento que use el asistente.
