@@ -1,0 +1,96 @@
+%!PS
+
+/Arial findfont
+10 scalefont
+setfont
+
+newpath
+
+%Fachada de la casita
+200 200 moveto
+120  0 rlineto
+0 90 rlineto
+-120  0 rlineto
+0 -90 rlineto
+
+0.9 0.9 0 setrgbcolor fill
+
+200 200 moveto
+120  0 rlineto
+0 90 rlineto
+-120  0 rlineto
+0 -90 rlineto
+
+0.1 setgray
+2 setlinewidth
+
+stroke
+
+%Tejado
+201 290 moveto
+60 60 rlineto
+60 -60 rlineto
+-90 0 rlineto
+
+1 0 0 setrgbcolor fill
+
+200 290 moveto
+60 60 rlineto
+60 -60 rlineto
+-120 0 rlineto
+
+0.1 setgray
+2 setlinewidth
+
+stroke
+
+%Puerta
+240 200 moveto
+40 0 rlineto
+0 45 rlineto
+-40 0 rlineto
+0 -45 rlineto
+
+0.5 0.25 0 setrgbcolor
+fill
+
+240 200 moveto
+40 0 rlineto
+0 45 rlineto
+-40 0 rlineto
+0 -45 rlineto
+
+0.1 setgray
+2 setlinewidth
+
+stroke
+
+%Dos ventanas
+220 270 15 0 360 arc
+0 0.5 0.5 setrgbcolor
+fill
+
+220 270 15 0 360 arc
+0.1 setgray
+2 setlinewidth
+
+stroke
+
+300 270 15 0 360 arc
+0 0.5 0.5 setrgbcolor
+fill
+
+300 270 15 0 360 arc
+0.1 setgray
+2 setlinewidth
+
+stroke
+
+%Texto lateral
+190 200 moveto
+90 rotate
+(Mi casita) show
+stroke
+
+%Y mostramos
+showpage
