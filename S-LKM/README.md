@@ -2,6 +2,8 @@
 
 Para realizar el módulo, he decidido basarme en el del ejemplo pero traducido y con alguna diferencia.
 
+Para probarlo instalé una Máquina Virtual con Ubuntu Server 20.04, el cual ya tenía la librería de headers.
+
 ## La información del kernel
 La información del kernel se definió con los headers `MODULE_X`. Así, la licencia sería normalmente de las usadas en Software Libre, generalmente GPL o AGPL.
 
@@ -19,6 +21,8 @@ Simplemente muestra el mensaje en dos tipos:
 `KERN_INFO` : Mensaje de información, como la información de inicialización. Normalmente se queda en el log.
 
 `KERN_ALERT` : Algo malo ocurre y debería tomarse alguna acción. En este tipo de alertas, se muestra en consola.
+
+Intenté realizar una cuenta atrás, pero causó un cuelgue del sistema, teniendo que reiniciar el sistema.
 
 ```c
 static int __init saludar(void){
