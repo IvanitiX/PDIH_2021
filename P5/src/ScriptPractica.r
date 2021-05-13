@@ -34,7 +34,8 @@ filtrado <- bwfilter(union, f=f, channel=1, n=1, from=10000, to=20000, bandpass=
 plot(extractWave(filtrado,from = 1, to = length(filtrado@left)),col = "blue" )
 
 #Guardamos el resultado
-savewav(filtrado,f=filtrado@samp.rate)
+savewav(filtrado,f=filtrado@samp.rate,filename = "mezcla.wav")
+
 
 #Se lee un nuevo archivo
 vaca <- readWave("vaca.wav")
@@ -52,6 +53,6 @@ str(vacaEcoReverse)
 plot(extractWave(vacaEcoReverse,from = 1, to = length(vacaEcoReverse@left)),col = "orange")
 
 #Guardamos el resultado
-savewav(vacaEcoReverse,f=vacaEcoReverse@samp.rate)
+savewav(vacaEcoReverse,f=vacaEcoReverse@samp.rate,filename = "alReves.wav")
 
 
