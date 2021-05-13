@@ -11,6 +11,7 @@ Repositorio de **Iván Valero Rodríguez** con las prácticas, trabajos y semina
 - [S1. Programación a bajo nivel](S1/README.md)
 - [S2. Acceso a dispositivos de E/S en C](S2/README.md)
 - [S3. Introducción con Arduino](S-arduino/README.md)
+- [S4. Introducción a los módulos cargables del Kernel de Linux](S-LKM/README.md)
 ## Trabajo final
 En colaboración con **Laura Sánchez Sánchez**
 - [Asistentes virtuales con IBM Watson](ProyectoFinal/README.md)
