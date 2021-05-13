@@ -1,7 +1,9 @@
 # Seminario 5. Manejo del sonido con R
 
 ## 1. Interpretando un archivo `.wav`
+
 Al abrir en HxD el archivo desagradable.wav podemos ver  una serie de textos y puntos. Si vamos mirando, podemos convertirlos en enteros que descibirán cómo es el archivo en la cabecera
+
 ![DumpHexadecimal](img/DumpHexadecimal.png)
 
 Tamaño de chunk (rojo) = 61188
