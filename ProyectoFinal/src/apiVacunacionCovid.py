@@ -11,10 +11,17 @@ class VacunacionCovid:
             self.jsonInfo = json.loads(self.peticion.data.decode('utf-8'))
 
     def getEstadoVacunacionGeneral(self):
-        jsonEspana = self.jsonInfo[len(self.jsonInfo)-1]
-        vacunacionUnaDosis = int(float(str(jsonEspana['etarios']['unaDosis']['etarioTotal']['porcentaje'])[0:4:1])*100)
-        vacunacionCompleta = int(float(str(jsonEspana['etarios']['pautaCompleta']['etarioTotal']['porcentaje'])[0:4:1])*100)
-        frase = f"En España, se ha vacunado el {vacunacionUnaDosis} % con una dosis y el {vacunacionCompleta} % con las dos."
+        jsonTotal = 0
+        for ccaa in self.jsonInfo:
+            if ccaa['ccaa'] == "Totales":
+                jsonTotal = ccaa
+        if (jsonTotal != 0):
+            vacunacionUnaDosis = int(float(str(jsonTotal['porcentajePoblacionAdministradas'])[0:4:1])*100)
+            vacunacionCompleta = int(float(str(jsonTotal['porcentajePoblacionCompletas'])[0:4:1])*100)
+            vacunacionUnaDosis -= vacunacionCompleta
+            frase = f"En España, se ha vacunado el {vacunacionUnaDosis} % con una dosis y el {vacunacionCompleta} % con las dos."
+        else:
+            frase = "Lo siento, no he oído bien a qué región de España te refieres. Repítalo con claridad, por favor."
         return frase
 
     def getEstadoVacunacionCCAA(self,comunidad):
